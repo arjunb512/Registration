@@ -1,0 +1,124 @@
+:root {
+    --primary: #6366f1;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --text-main: #1f2937;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Floating Label Logic */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #e5e7eb;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    color: #9ca3af;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+/* Move label up on focus or when input is not empty */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -12px;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.input-group input:focus {
+    border-bottom-color: var(--primary);
+}
+
+/* Password Strength Meter */
+.strength-meter {
+    height: 4px;
+    width: 100%;
+    background: #e5e7eb;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 40%; /* This would be dynamic via JS */
+    background: #ef4444; /* Red for weak */
+    transition: width 0.5s ease;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.custom-checkbox input { display: none; }
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Submit Button Hover Effects */
+.submit-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.submit-btn:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
